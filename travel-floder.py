@@ -50,6 +50,7 @@ def handle_file(file_name: str):
     with open(file_name, 'rt') as f:
         for line in f:
             if contain_zh_hans(line):
+                global ever
                 ever = True
                 if args.detail:
                     print(file_name + ' --> ' + line[:-1])
