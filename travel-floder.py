@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 import os
@@ -43,10 +44,13 @@ def contain_zh_hans(word: str) -> 'boolean':
     match = zh_pattern.search(word)
     return match
 
+ever = False
+
 def handle_file(file_name: str):
     with open(file_name, 'rt') as f:
         for line in f:
             if contain_zh_hans(line):
+                ever = True
                 if args.detail:
                     print(file_name + ' --> ' + line[:-1])
                 else:
@@ -54,3 +58,5 @@ def handle_file(file_name: str):
                 return
 
 travel_floder(args.floder, '')
+if ever == False:
+    print('has no chinese')
