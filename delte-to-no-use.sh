@@ -3,18 +3,16 @@
 set -e
 
 prefix="/usr/local/bin/"
-total=`ls | grep *.py`
+total=`ls | grep .py`
 echo "deleting .... ${total}"
 
-cmd=""
 for data in ${total[@]}
 do
+  cmd=""
   cmd+="sudo rm -rf ${prefix}${data}"
+  echo ${cmd}
+  ${cmd}
 done
-
-echo ${cmd}
-
-${cmd}
 
 echo "ok......"
 
