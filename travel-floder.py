@@ -15,6 +15,9 @@ args = parser.parse_args()
 ignore_file_suffix = [".gitignore", ".md"]
 ignore_floder = [".git", "bin", "imgs"]
 
+# TODO:(weimingliu) how to auto ignore file or floder if can not read
+# or learn how to open a img or a binary file
+
 def travel_floder(root: str, name: str):
     path = os.path.join(root, name)
     if os.path.isdir(path) == False:
