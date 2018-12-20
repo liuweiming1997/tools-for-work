@@ -46,7 +46,7 @@ def parse_csv_to_dict(file) -> 'void':
 
 result = '{\n'
 
-def parse_dict_to_js(d: dict, tab_num: int) -> 'void':
+def parse_dict_to_json(d: dict, tab_num: int) -> 'void':
     global result
     for key in sorted(d):
         for i in range(0, tab_num):
@@ -58,13 +58,13 @@ def parse_dict_to_js(d: dict, tab_num: int) -> 'void':
             continue
         else:
             result += "{\n"
-        parse_dict_to_js(d[key], tab_num + 1)
+        parse_dict_to_json(d[key], tab_num + 1)
         for i in range(tab_num):
             result += tab_string
         result += "},\n"
 
 with open(args.file) as file:
     parse_csv_to_dict(file)
-    parse_dict_to_js(data, 1)
+    parse_dict_to_json(data, 1)
     result += "}\n"
     print(result)
