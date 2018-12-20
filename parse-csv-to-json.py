@@ -7,7 +7,7 @@ import random
 import string
 
 parser = argparse.ArgumentParser(description='manual to this script')
-parser.add_argument('--file', type=str, default='xxx.csv')
+parser.add_argument('--file', type=str, default='xxx.csv', help="The file you want to parse")
 args = parser.parse_args()
 
 data = {}
