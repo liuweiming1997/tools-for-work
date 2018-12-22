@@ -28,7 +28,15 @@ function sync_sublime() {
   git pull --rebase origin master
 }
 
+function sync_tmux() {
+  echo "sync_tmux....."
+  echo "----------------------------------->"
+  cd ~/.tmux/
+  git pull --rebase origin master
+  ./send-tmux-conf.sh
+}
+
 sync_vim
 sync_zsh
 sync_sublime
-
+sync_tmux
