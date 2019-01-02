@@ -2,6 +2,9 @@
 
 set -e
 
+echo "sync tools-for-work"
+git pull --rebase origin master
+
 function sync_vim() {
   echo "sync_vim......."
   echo "---------------------------------->"
